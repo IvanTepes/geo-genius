@@ -1,0 +1,37 @@
+/* ! GAME DISPLAY */
+// ! Game display
+
+.game {
+    position: absolute;
+    top: 4rem;
+    // height: calc(100% - 13rem);
+    height: calc(100% - 6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__flag-img {
+        height: 5rem;
+        border-radius: $border__radius;
+        box-shadow: var(--theme__btn-shadow--normal);
+    }
+
+    &__answer-btns {
+        width: 8rem;
+        height: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: var(--theme__font-weight) !important;
+    }
+
+    &__answer--correct {
+        background-color: green !important;
+    }
+
+    &__answer--incorrect {
+        background-color: red !important;
+    }
+}
+
+.question__count::before {
+    content: 'Question  ';
+}

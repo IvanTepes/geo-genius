@@ -1,0 +1,22 @@
+/* ! MODAL*/
+// ! Modal
+
+.modal {
+    background-color: var(--theme__color--primary) !important;
+
+    &-content {
+        background-color: var(--theme__color--primary) !important;
+        transition: ease-in 0.2s !important;
+    }
+
+    &__navigation {
+        position: absolute !important;
+        top: 4.2rem !important;
+        height: calc(100% - 4.2rem) !important;
+        transition: ease-in 0.2s;
+        &-backdrop {
+            width: 0px !important;
+            background-color: transparent !important;
+        }
+    }
+}

@@ -1,0 +1,109 @@
+// @media screen and (max-width: 375px) {
+//     .navigation__menu svg {
+//         height: 2.5rem;
+//         width: 2.5rem;
+//     }
+
+//     .navigation__theme-toggle svg {
+//         height: 2.5rem;
+//         width: 2.5rem;
+//     }
+// }
+
+@media (orientation: portrait) {
+    .game {
+        position: absolute;
+        top: 4rem;
+        height: calc(100% - 4rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .game__lives {
+        position: absolute;
+        top: 3rem;
+        right: 2rem;
+        width: 6rem !important;
+    }
+
+    .game__lives::before {
+        content: 'Lives';
+        position: absolute;
+        width: 10rem;
+        top: -1.5rem;
+        right: -2rem;
+    }
+
+    .game__time {
+        position: absolute;
+        top: 3rem;
+        left: 3.7rem;
+    }
+    .game__time::before {
+        content: 'Time';
+        position: absolute;
+        width: 10rem;
+        top: -1.5rem;
+        left: -3.8rem;
+    }
+}
+
+// @media screen and (min-width: 321px) {
+//     body {
+//         background-color: blue;
+//     }
+// }
+
+@media (orientation: landscape) and (max-width: 768px) {
+    .game__lives {
+        position: absolute;
+        top: -2rem;
+        right: 12rem;
+        width: 6rem !important;
+    }
+    .game__time {
+        position: absolute;
+        top: -2rem;
+        left: 14.5rem;
+    }
+    .game__time::before {
+        content: 'Time';
+        position: absolute;
+        width: 10rem;
+        top: -1.5rem;
+        left: -4rem;
+    }
+    .game__lives::before {
+        content: 'Lives';
+        position: absolute;
+        width: 10rem;
+        top: -1.5rem;
+        right: -2rem;
+    }
+
+    .game__flag-img {
+        height: 3.5rem;
+    }
+
+    .game {
+        height: calc(100% - 6rem);
+    }
+
+    .game__answer-btns {
+        width: 7rem;
+        height: 2.5rem;
+        font-size: 0.8rem !important;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .game__time::before {
+        content: 'Time  ';
+        display: grid;
+    }
+    .game__lives::before {
+        content: 'Lives';
+        display: grid;
+    }
+}

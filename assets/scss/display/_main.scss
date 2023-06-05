@@ -1,0 +1,18 @@
+/* ! MAIN DISPLAY */
+// ! Main display
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    align-items: stretch;
+    & .row:first-of-type {
+        margin: 0;
+        position: absolute;
+        top: 22%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+}

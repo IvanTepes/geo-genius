@@ -1,0 +1,535 @@
+/* ! RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0 !important;
+}
+
+/* To remove flickering fade out black color from modal backdrop when navigation-menu is hiding */
+.modal-backdrop {
+  background-color: transparent !important;
+}
+
+/* ! BASE CONFIGURATION */
+/* Base Wrapper  */
+.wrapper {
+  height: 100%;
+  transition: ease-in 0.2s;
+  background-color: var(--theme__color--primary);
+  color: var(--theme__color--text);
+}
+
+/* Base navigation height */
+.navigation {
+  height: 4rem;
+}
+
+/* Base main height */
+.main {
+  height: calc(100% - 4rem);
+}
+
+/* Base footer height */
+.footer {
+  height: 0rem;
+}
+
+/* ! HELPER CLASSES */
+/* Helper class to hide element */
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+/* Helper class to display element */
+.visible {
+  opacity: 1;
+  transition: opacity 0.4s ease-in;
+}
+
+/* Helper class reduce height of element */
+.reduce-height {
+  height: calc(100% - 8rem) !important;
+}
+
+/* ! Typography */
+h1 {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-family: "Hind Madurai", sans-serif;
+}
+
+/* Typography classes to set different size font in game answer btn
+    Based on country name length
+*/
+.game__answer-btn--short-font {
+  font-size: 0.8rem !important;
+  padding: 0.2rem !important;
+}
+
+.game__answer-btn--medium-font {
+  font-size: 0.8rem !important;
+  padding: 0.2rem !important;
+}
+
+.game__answer-btn--long-font {
+  font-size: 0.7rem !important;
+}
+
+.game__answer-btn--extra-long-font {
+  font-size: 0.75rem !important;
+  padding: 0.2rem !important;
+}
+
+/* ! DARK THEME COLORS */
+html[data-theme=dark] {
+  --theme__color--primary: #2f3541;
+  --theme__color--secondary: #262a34;
+  --theme__color--text: #c7c7c7;
+  --theme__color--svg-fill: #c7c7c7;
+  --theme__color--svg-background: #2f3541;
+  --theme__btn-shadow--normal: 2px 4px 3px 0px #1c1f27, inset 2px 2px 3px 0px #535c74;
+  --theme__btn-shadow--pressed: inset 2px 4px 3px 0px #1c1f27, 2px 2px 3px 0px #535c74;
+  --theme__font-weight: 500;
+}
+
+/* ! LIGHT THEME COLORS */
+html[data-theme=light] {
+  --theme__color--primary: #c7c7c7;
+  --theme__color--secondary: #acaeb3;
+  --theme__color--text: #2f3541;
+  --theme__color--svg-fill: #2f3541;
+  --theme__color--svg-background: #c7c7c7;
+  --theme__btn-shadow--normal: 2px 2px 3px 0px #595d67, inset 2px 2px 3px 0px #eaebec;
+  --theme__btn-shadow--pressed: inset 1px 1px 3px 0px #2f3541, -1px -1px 3px 0px #c7c7c7;
+  --theme__font-weight: 700;
+}
+
+/* ! NAVIGATION */
+.navigation__menu {
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.navigation__menu svg {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.navigation__menu--line {
+  fill: none;
+  stroke: var(--theme__color--svg-fill);
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navigation__menu--line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.navigation__menu--line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.navigation__menu--line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.navigation__menu--opened .navigation__menu--line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.navigation__menu--opened .navigation__menu--line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.navigation__menu--opened .navigation__menu--line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+/* ! NAVIGATION THEME TOGGLE*/
+.navigation__theme-toggle {
+  font-size: 2em;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+.navigation__theme-toggle::after {
+  content: attr(aria-label);
+  position: absolute;
+  font-size: 1rem;
+  display: block;
+  top: 120%;
+  left: 50%;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.375em 0.75em;
+  color: var(--theme__color--svg-background);
+  background-color: var(--theme__color--svg-fill);
+  border-radius: 0.375rem;
+  opacity: 0;
+  transform: scale(0) translateX(-50%);
+  transform-origin: 0% 0%;
+  transition: transform 0.2s, opacity 0.2s;
+  pointer-events: none;
+}
+.navigation__theme-toggle:hover::after, .navigation__theme-toggle:focus::after {
+  transform: scale(1) translateX(-50%);
+}
+.navigation__theme-toggle svg {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: block;
+  fill: var(--theme__color--svg-fill);
+  padding: 0.5rem;
+}
+.navigation__theme-toggle circle {
+  transform: none;
+  transform-origin: 50% 50%;
+  transition: transform 0.5s;
+}
+.navigation__theme-toggle--sun {
+  transform-origin: center;
+  transition: transform 0.6s;
+}
+
+.light .navigation__theme-toggle circle {
+  transform: translateX(-72px) scaleY(1.143);
+}
+
+.light .navigation__theme-toggle--sun {
+  transform: rotate(0);
+}
+
+.dark .navigation__theme-toggle--sun {
+  transform: rotate(0.5turn);
+}
+
+/* ! CAROUSEL*/
+.carousel-item.active {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  top: calc(50vh - 7rem);
+  height: 10rem !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  top: calc(50vh - 7rem) !important;
+  height: 10rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none !important;
+}
+
+.carousel-control-prev-icon svg,
+.carousel-control-next-icon svg {
+  fill: var(--theme__color--svg-fill);
+}
+
+/* ! Button Style */
+.btn-style {
+  box-shadow: var(--theme__btn-shadow--normal) !important;
+  background-color: var(--theme__color--secondary) !important;
+  color: var(--theme__color--text) !important;
+  border: none !important;
+  font-family: "Alegreya Sans SC", sans-serif !important;
+  font-weight: var(--theme__font-weight) !important;
+  letter-spacing: 1.5px;
+  /* For some reason when hover is applied button on small screen doesn't come back when pressed*/
+  /* So hover is applied only for desktop screens and up */
+}
+.btn-style:active {
+  border: none;
+  border-color: transparent !important;
+  box-shadow: var(--theme__btn-shadow--pressed) !important;
+  font-family: "Alegreya Sans SC", sans-serif !important;
+  font-weight: 500 !important;
+}
+@media only screen and (min-width: 768px) {
+  .btn-style:hover {
+    box-shadow: var(--theme__btn-shadow--pressed) !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* ! GAME MODE CARD*/
+.game-category__card {
+  border-radius: 0.375rem;
+  height: 12rem !important;
+  cursor: pointer;
+}
+.game-category__card svg {
+  fill: var(--theme__color--svg-fill);
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+}
+.game-category__card-text {
+  font-family: "Hind Madurai", sans-serif;
+  text-align: center;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px;
+}
+.game-category__card:hover {
+  box-shadow: var(--theme__btn-shadow--pressed);
+}
+.game-category__card:hover svg {
+  filter: drop-shadow(2px 5px 2px rgba(0, 0, 0, 0.3));
+}
+.game-category__card:hover .game-category__card-text {
+  text-shadow: 0px 0px 1px var(--theme__color--text);
+}
+
+/* ! FOOTER*/
+.footer__back-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  padding: 0.5rem 0.2rem;
+  border-radius: 0.375rem;
+  right: 15px;
+  bottom: 8px;
+  fill: var(--theme__color--svg-fill);
+}
+.footer__reset-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  left: 15px;
+  bottom: 8px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.375rem;
+  fill: var(--theme__color--svg-fill);
+}
+.footer__next-question--btn {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  font-size: 0;
+  line-height: 0;
+}
+.footer__next-question--label {
+  font-size: 0.8rem;
+  line-height: 16px;
+}
+
+/* ! MODAL*/
+.modal {
+  background-color: var(--theme__color--primary) !important;
+}
+.modal-content {
+  background-color: var(--theme__color--primary) !important;
+  transition: ease-in 0.2s !important;
+}
+.modal__navigation {
+  position: absolute !important;
+  top: 4.2rem !important;
+  height: calc(100% - 4.2rem) !important;
+  transition: ease-in 0.2s;
+}
+.modal__navigation-backdrop {
+  width: 0px !important;
+  background-color: transparent !important;
+}
+
+/* ! MAIN DISPLAY */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+  align-items: stretch;
+}
+.main .row:first-of-type {
+  margin: 0;
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+/* ! DIFFICULTY DISPLAY */
+.difficulty {
+  position: absolute;
+  top: 4rem;
+  height: calc(100% - 8rem);
+}
+.difficulty__btns {
+  height: 3.5rem;
+  width: 10.5rem;
+  color: var(--theme__color--text) !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+}
+.difficulty .row:first-of-type {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.difficulty .row:last-of-type {
+  height: calc(100% - 6rem);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* ! GAME DISPLAY */
+.game {
+  position: absolute;
+  top: 4rem;
+  height: calc(100% - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.game__flag-img {
+  height: 5rem;
+  border-radius: 0.375rem;
+  box-shadow: var(--theme__btn-shadow--normal);
+}
+.game__answer-btns {
+  width: 8rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: var(--theme__font-weight) !important;
+}
+.game__answer--correct {
+  background-color: green !important;
+}
+.game__answer--incorrect {
+  background-color: red !important;
+}
+
+.question__count::before {
+  content: "Question  ";
+}
+
+@media (orientation: portrait) {
+  .game {
+    position: absolute;
+    top: 4rem;
+    height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .game__lives {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    width: 6rem !important;
+  }
+  .game__lives::before {
+    content: "Lives";
+    position: absolute;
+    width: 10rem;
+    top: -1.5rem;
+    right: -2rem;
+  }
+  .game__time {
+    position: absolute;
+    top: 3rem;
+    left: 3.7rem;
+  }
+  .game__time::before {
+    content: "Time";
+    position: absolute;
+    width: 10rem;
+    top: -1.5rem;
+    left: -3.8rem;
+  }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  .game__lives {
+    position: absolute;
+    top: -2rem;
+    right: 12rem;
+    width: 6rem !important;
+  }
+  .game__time {
+    position: absolute;
+    top: -2rem;
+    left: 14.5rem;
+  }
+  .game__time::before {
+    content: "Time";
+    position: absolute;
+    width: 10rem;
+    top: -1.5rem;
+    left: -4rem;
+  }
+  .game__lives::before {
+    content: "Lives";
+    position: absolute;
+    width: 10rem;
+    top: -1.5rem;
+    right: -2rem;
+  }
+  .game__flag-img {
+    height: 3.5rem;
+  }
+  .game {
+    height: calc(100% - 6rem);
+  }
+  .game__answer-btns {
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 0.8rem !important;
+  }
+}
+@media screen and (min-width: 769px) {
+  .game__time::before {
+    content: "Time  ";
+    display: grid;
+  }
+  .game__lives::before {
+    content: "Lives";
+    display: grid;
+  }
+}/*# sourceMappingURL=main.css.map */

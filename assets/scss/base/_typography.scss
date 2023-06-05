@@ -1,0 +1,37 @@
+/* ! Typography */
+// ! TYPOGRAPHY
+
+$font-family__primary: 'Alegreya Sans SC', sans-serif;
+$font-family__secondary: 'Hind Madurai', sans-serif;
+$font-weight-500: 500 !important;
+$font-weight-700: 700 !important;
+
+h1 {
+    font-family: $font-family__primary;
+    font-weight: $font-weight-700;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-family: $font-family__secondary;
+}
+
+/* Typography classes to set different size font in game answer btn
+    Based on country name length
+*/
+.game__answer-btn--short-font {
+    font-size: 0.8rem !important;
+    padding: 0.2rem !important;
+}
+.game__answer-btn--medium-font {
+    font-size: 0.8rem !important;
+    padding: 0.2rem !important;
+}
+.game__answer-btn--long-font {
+    font-size: 0.7rem !important;
+}
+
+.game__answer-btn--extra-long-font {
+    font-size: 0.75rem !important;
+    padding: 0.2rem !important;
+}

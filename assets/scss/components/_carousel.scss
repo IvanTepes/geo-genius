@@ -1,0 +1,41 @@
+/* ! CAROUSEL*/
+// ! Carousel
+
+.carousel-item.active {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    top: calc(50vh - 7rem);
+    height: 10rem !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    top: calc(50vh - 7rem) !important;
+    height: 10rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+}
+
+.carousel-control-prev-icon svg,
+.carousel-control-next-icon svg {
+    fill: var(--theme__color--svg-fill);
+}

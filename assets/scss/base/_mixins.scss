@@ -1,0 +1,10 @@
+@mixin position__center() {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin btn__size {
+    height: 2.5rem;
+    width: 2.5rem;
+}

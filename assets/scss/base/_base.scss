@@ -1,0 +1,25 @@
+/* ! BASE CONFIGURATION */
+// ! Base APP configuration
+
+/* Base Wrapper  */
+.wrapper {
+    height: 100%;
+    transition: ease-in 0.2s;
+    background-color: var(--theme__color--primary);
+    color: var(--theme__color--text);
+}
+
+/* Base navigation height */
+.navigation {
+    height: 4rem;
+}
+
+/* Base main height */
+.main {
+    height: calc(100% - 4rem);
+}
+
+/* Base footer height */
+.footer {
+    height: 0rem;
+}

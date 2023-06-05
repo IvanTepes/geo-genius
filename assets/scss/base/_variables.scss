@@ -1,0 +1,31 @@
+// ! Helper Variables
+
+$border__radius: 0.375rem;
+
+// ! Theme Colors variables
+
+//! LIGHT THEME
+$theme-light__bg--primary: #c7c7c7;
+$theme-light__bg--secondary: #acaeb3;
+$theme-light__text-color: #2f3541;
+$theme-light__font-weight: 700;
+$theme-light__svg-fill: $theme-light__text-color;
+
+//! DARK THEME
+$theme-dark__bg--primary: #2f3541;
+$theme-dark__bg--secondary: #262a34;
+$theme-dark__text-color: $theme-light__bg--primary;
+$theme-dark__font-weight: 500;
+$theme-dark__svg-fill: $theme-light__bg--primary;
+
+//! LIGHT SHADOW
+$theme-light__btn-shadow--normal: 2px 2px 3px 0px #595d67,
+    inset 2px 2px 3px 0px #eaebec;
+$theme-light__btn-shadow--pressed: inset 1px 1px 3px 0px #2f3541,
+    -1px -1px 3px 0px #c7c7c7;
+
+//! DARK SHADOW
+$theme-dark__btn-shadow--normal: 2px 4px 3px 0px #1c1f27,
+    inset 2px 2px 3px 0px #535c74;
+$theme-dark__btn-shadow--pressed: inset 2px 4px 3px 0px #1c1f27,
+    2px 2px 3px 0px #535c74;

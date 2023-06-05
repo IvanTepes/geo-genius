@@ -1,0 +1,32 @@
+/* ! GAME MODE CARD*/
+// ! Game mode card
+
+.game-category__card {
+    border-radius: $border__radius;
+    height: 12rem !important;
+    cursor: pointer;
+
+    & svg {
+        fill: var(--theme__color--svg-fill);
+        padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    }
+
+    &-text {
+        font-family: $font-family__secondary;
+        text-align: center;
+        font-weight: $font-weight-700;
+        letter-spacing: 1.5px;
+    }
+
+    &:hover {
+        box-shadow: var(--theme__btn-shadow--pressed);
+    }
+
+    &:hover svg {
+        filter: drop-shadow(2px 5px 2px rgba(0, 0, 0, 0.3));
+    }
+
+    &:hover .game-category__card-text {
+        text-shadow: 0px 0px 1px var(--theme__color--text);
+    }
+}

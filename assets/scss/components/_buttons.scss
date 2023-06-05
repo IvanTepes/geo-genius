@@ -1,0 +1,28 @@
+/* ! Button Style */
+// ! BUTTON STYLE
+
+.btn-style {
+    box-shadow: var(--theme__btn-shadow--normal) !important;
+    background-color: var(--theme__color--secondary) !important;
+    color: var(--theme__color--text) !important;
+    border: none !important;
+    font-family: $font-family__primary !important;
+    font-weight: var(--theme__font-weight) !important;
+    letter-spacing: 1.5px;
+
+    &:active {
+        border: none;
+        border-color: transparent !important;
+        box-shadow: var(--theme__btn-shadow--pressed) !important;
+        font-family: $font-family__primary !important;
+        font-weight: $font-weight-500;
+    }
+    /* For some reason when hover is applied button on small screen doesn't come back when pressed*/
+    /* So hover is applied only for desktop screens and up */
+    &:hover {
+        @media only screen and (min-width: 768px) {
+            box-shadow: var(--theme__btn-shadow--pressed) !important;
+            font-weight: $font-weight-700;
+        }
+    }
+}

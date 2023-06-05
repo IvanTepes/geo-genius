@@ -1,0 +1,13 @@
+/* ! LIGHT THEME COLORS */
+// ! Light theme colors
+
+html[data-theme='light'] {
+    --theme__color--primary: #{$theme-light__bg--primary};
+    --theme__color--secondary: #{$theme-light__bg--secondary};
+    --theme__color--text: #{$theme-light__text-color};
+    --theme__color--svg-fill: #{$theme-light__svg-fill};
+    --theme__color--svg-background: #{$theme-light__bg--primary};
+    --theme__btn-shadow--normal: #{$theme-light__btn-shadow--normal};
+    --theme__btn-shadow--pressed: #{$theme-light__btn-shadow--pressed};
+    --theme__font-weight: #{$theme-light__font-weight};
+}

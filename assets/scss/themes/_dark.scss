@@ -1,0 +1,13 @@
+/* ! DARK THEME COLORS */
+// ! Dark theme colors
+
+html[data-theme='dark'] {
+    --theme__color--primary: #{$theme-dark__bg--primary};
+    --theme__color--secondary: #{$theme-dark__bg--secondary};
+    --theme__color--text: #{$theme-dark__text-color};
+    --theme__color--svg-fill: #{$theme-dark__svg-fill};
+    --theme__color--svg-background: #{$theme-dark__bg--primary};
+    --theme__btn-shadow--normal: #{$theme-dark__btn-shadow--normal};
+    --theme__btn-shadow--pressed: #{$theme-dark__btn-shadow--pressed};
+    --theme__font-weight: #{$theme-dark__font-weight};
+}
