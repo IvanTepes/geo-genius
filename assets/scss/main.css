@@ -249,13 +249,13 @@ html[data-theme=light] {
   display: flex !important;
   justify-content: center;
   align-items: center;
-  top: calc(50vh - 7rem);
+  top: calc(50dvh - 7rem);
   height: 10rem !important;
 }
 
 .carousel-control-next,
 .carousel-control-prev {
-  top: calc(50vh - 7rem) !important;
+  top: calc(50dvh - 7rem) !important;
   height: 10rem;
 }
 
