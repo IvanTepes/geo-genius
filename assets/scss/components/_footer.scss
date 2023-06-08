@@ -7,7 +7,7 @@
         padding: 0.5rem 0.2rem;
         border-radius: 0.375rem;
         right: 15px;
-        bottom: 8px;
+        bottom: 2dvh;
         fill: var(--theme__color--svg-fill);
     }
 
@@ -15,7 +15,7 @@
         @include btn__size;
         position: absolute;
         left: 15px;
-        bottom: 8px;
+        bottom: 2dvh;
         padding: 0.2rem 0.6rem;
         border-radius: 0.375rem;
         fill: var(--theme__color--svg-fill);
